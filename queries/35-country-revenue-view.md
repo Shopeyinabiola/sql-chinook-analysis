@@ -2,7 +2,7 @@
 
 **Business question:** Which country generates the most revenue, using reusable views?
 
-**Skills used:** Views, a view built on another view
+**Skills used:** Views, a view built on another view, window function(RANK with RARTITION BY)
 
 ## Query
 ```sql
@@ -19,10 +19,13 @@ SELECT Country, COUNT(*) AS customer_count, SUM(total_spent) AS total_revenue
 FROM customer_revenue
 GROUP BY Country;
 
-SELECT * FROM country_revenue
-ORDER BY total_revenue DESC
-LIMIT 1;
-```
+WITH ranked AS (
+SELECT Country, customer_count, total_revenue,
+RANK() OVER (ORDER BY total_revenue DESC) AS revenue_rank 
+FROM country_revenue
+)
+SELECT * FROM ranked 
+WHERE revenue_rank=1;
 
 ## Result
 ![Country revenue view](../images/35-country-revenue_view.png.)
