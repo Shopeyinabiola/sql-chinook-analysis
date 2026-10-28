@@ -29,7 +29,7 @@ WHERE revenue_rank=1;
 ```
 
 ## Result
-![Country revenue view](../images/35-country-revenue_view.png.png)
+![Country revenue view](../images/35-country-revenue_view.png.)
 
 ## Insight
 country_revenue is built on top of customer_revenue, a view on a view. The USA comes out on top with 13 customers and 523.06 in revenue.
