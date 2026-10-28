@@ -15,4 +15,4 @@ MySQL Workbench, MySQL 8
 Chinook sample database by Luis Rocha (MIT licence): https://github.com/lerocha/chinook-database
 
 ## Queries
-Coming soon.
+1. [Revenue by country](queries/04-revenue-by-country.md)
